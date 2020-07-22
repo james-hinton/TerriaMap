@@ -13,5 +13,9 @@ COPY . .
 
 RUN rm wwwroot/config.json && ln -s /etc/config/client/config.json wwwroot/config.json
 
+FROM build as solomon_build
 RUN npm run gulp
 
+FROM build as vanuatu_build
+RUN sed -i 's/hsl(209, 79%, 42%)/hsl(44, 92%, 45%)/' lib/Styles/variables.scss
+RUN npm run gulp
