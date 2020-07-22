@@ -24,7 +24,8 @@ jobs:
           echo "::set-output name=branch_name::${{ github.head_ref }}"
         elif [ ${{ github.event_name }} == "push" ]
         then
-          echo "::set-output name=branch_name::$(${{ github.ref }} | sed -e "s#refs/heads/##g")"
+          GITHUB_REF=$(echo $GITHUB_REF | sed -e "s#refs/heads/##g")
+          echo "::set-output name=branch_name::$(echo $GITHUB_REF | sed -e "s#refs/heads/##g")"
         fi
 
     - name: Build and push Docker images for Solomon
