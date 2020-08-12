@@ -59,6 +59,14 @@ body {
     background: $dark-darker;
   }
 
+  // Tool buttons
+  .tjs-tool_button__btn,
+  .tjs-toggle_splitter_tool__btn {
+    svg {
+      fill: $dark;
+    }
+  }
+
   // All kinds of buttons in various screens
   .tjs-_buttons__btn {
     &-primary {
