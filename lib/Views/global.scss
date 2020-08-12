@@ -142,11 +142,23 @@ body {
       color: hsl(0, 0%, 90%);
     }
     a {
-      color: $color-secondary;
+      color: $dark;
     }
   }
 
   .tjs-_buttons__btn-primary {
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  .tjs-side-panel__button {
+    &:hover {
+      color: white;
+    }
+  }
+
+  .tjs-datetime-selector-section__currentDate {
     &:hover {
       color: $color-secondary;
     }
