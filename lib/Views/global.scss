@@ -81,7 +81,7 @@ body {
   .tjs-_buttons__btn--map {
     &:focus,
     &:hover {
-      color: white;
+      color: $color-secondary;
     }
   }
 
@@ -156,13 +156,7 @@ body {
 
   .tjs-_buttons__btn-primary {
     &:hover {
-      color: $color-primary;
-    }
-  }
-
-  .tjs-side-panel__button {
-    &:hover {
-      color: white;
+      color: $color-secondary;
     }
   }
 
@@ -176,7 +170,7 @@ body {
   // expandable catalog groups
   .tjs-data-catalog-group__btn--catalog {
     &:hover {
-      background: $color-primary-light;
+      background: $color-primary;
       color: $color-secondary;
     }
     &:focus {
@@ -187,6 +181,12 @@ body {
   .tjs-_buttons__btn-transparent {
     &:hover {
       background: $color-secondary;
+      color: $color-primary;
+    }
+  }
+  .tjs-mappable-preview__btn--add {
+    &:hover {
+      color: $color-secondary;
     }
   }
   // The currently selected item in the list
