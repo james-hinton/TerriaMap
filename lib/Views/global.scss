@@ -59,6 +59,14 @@ body {
     background: $dark-darker;
   }
 
+  // Tool buttons
+  .tjs-tool_button__btn,
+  .tjs-toggle_splitter_tool__btn {
+    svg {
+      fill: $dark;
+    }
+  }
+
   // All kinds of buttons in various screens
   .tjs-_buttons__btn {
     &-primary {
@@ -71,7 +79,6 @@ body {
 
   // Buttons like "Share" within the map area.
   .tjs-_buttons__btn--map {
-    background: $dark;
     &:focus,
     &:hover {
       color: $color-secondary;
@@ -125,11 +132,6 @@ body {
     background: $dark;
   }
 
-  .tjs-share-panel__btn--catalogShare {
-    background: $color-primary;
-    color: $color-secondary;
-  }
-
   // Feature info table
   .tjs-feature-info-section__content {
     h1 {
@@ -148,7 +150,7 @@ body {
       color: hsl(0, 0%, 90%);
     }
     a {
-      color: $color-secondary;
+      color: $dark;
     }
   }
 
@@ -158,11 +160,17 @@ body {
     }
   }
 
+  .tjs-datetime-selector-section__currentDate {
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+
   // The Data Catalog ("Add Data") page
   // expandable catalog groups
   .tjs-data-catalog-group__btn--catalog {
     &:hover {
-      background: $color-primary-light;
+      background: $color-primary;
       color: $color-secondary;
     }
     &:focus {
@@ -173,13 +181,31 @@ body {
   .tjs-_buttons__btn-transparent {
     &:hover {
       background: $color-secondary;
+      color: $color-primary;
+    }
+  }
+  .tjs-mappable-preview__btn--add {
+    &:hover {
+      color: $color-secondary;
     }
   }
   // The currently selected item in the list
   .tjs-data-catalog-item__btn-catalog-item--is-previewed {
+    color: $color-primary;
     &:focus {
       color: $color-primary;
     }
+  }
+  .tjs-data-catalog-item__btn-action {
+    &:hover,
+    &:focus {
+      svg {
+        fill: $color-primary;
+      }
+    }
+  }
+  .tjs-data-catalog-group__isPreviewed {
+    background: $color-primary;
   }
   // The tabs at the top
   .tjs-tabs__btn--tab {
