@@ -71,10 +71,9 @@ body {
 
   // Buttons like "Share" within the map area.
   .tjs-_buttons__btn--map {
-    background: $dark;
     &:focus,
     &:hover {
-      color: $color-secondary;
+      color: white;
     }
   }
 
@@ -123,11 +122,6 @@ body {
 
   .tjs-zoom_control__zoomControl {
     background: $dark;
-  }
-
-  .tjs-share-panel__btn--catalogShare {
-    background: $color-primary;
-    color: $color-secondary;
   }
 
   // Feature info table
