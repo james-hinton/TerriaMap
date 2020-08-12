@@ -175,6 +175,9 @@ body {
       color: $color-primary;
     }
   }
+  .tjs-data-catalog-group__isPreviewed {
+    background: $color-primary;
+  }
   // The tabs at the top
   .tjs-tabs__btn--tab {
     font-family: $font-base;
