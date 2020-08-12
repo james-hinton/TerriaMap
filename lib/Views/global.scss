@@ -183,8 +183,17 @@ body {
   }
   // The currently selected item in the list
   .tjs-data-catalog-item__btn-catalog-item--is-previewed {
+    color: $color-primary;
     &:focus {
       color: $color-primary;
+    }
+  }
+  .tjs-data-catalog-item__btn-action {
+    &:hover,
+    &:focus {
+      svg {
+        fill: $color-primary;
+      }
     }
   }
   .tjs-data-catalog-group__isPreviewed {
