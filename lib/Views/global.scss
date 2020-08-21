@@ -86,6 +86,15 @@ body {
     }
   }
 
+  .tjs-viewing-controls__btn {
+    &-primary {
+      font-family: $font-base;
+    }
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+
   // Buttons like "Share" within the map area.
   .tjs-_buttons__btn--map {
     &:focus,
