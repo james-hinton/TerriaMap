@@ -13,7 +13,7 @@ COPY . .
 
 RUN rm wwwroot/config.json && ln -s /etc/config/client/config.json wwwroot/config.json
 
-RUN cp -r node_modules/@davidedelerma/terriajs node_modules && rm -rf node_modules/@davidedelerma/
+RUN cp -r node_modules/@juanezm/terriajs node_modules && rm -rf node_modules/@juanezm/
 
 FROM build as solomon_build
 RUN npm run gulp
