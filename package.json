@@ -32,7 +32,7 @@
     "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
-    "@juanezm/terriajs": "^7.14.2",
+    "@juanezm/terriajs": "^7.15.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "babel-plugin-jsx-control-statements": "^4.0.0",
