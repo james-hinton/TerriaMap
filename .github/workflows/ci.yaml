@@ -27,23 +27,24 @@ jobs:
           GITHUB_REF=$(echo $GITHUB_REF | sed -e "s#refs/heads/##g")
           echo "::set-output name=branch_name::$(echo $GITHUB_REF | sed -e "s#refs/heads/##g")"
         fi
-
-    - name: Build and push Docker images for Solomon
-      uses: docker/build-push-action@v1.1.0
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+    - name: Login to Docker Hub
+      uses: docker/login-action@v1
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: satapps/terriamap
-        dockerfile: ./deploy/docker-alternate/alternate.Dockerfile
-        tags: ${{ steps.branch.outputs.branch_name }}-sha-${{ steps.sha.outputs.sha_short }}-solomon
+          
+    - name: Build and push Docker images for Solomon
+      uses: docker/build-push-action@v2
+      with:
+        file: ./deploy/docker-alternate/alternate.Dockerfile
+        tags: satapps/terriamap:${{ steps.branch.outputs.branch_name }}-sha-${{ steps.sha.outputs.sha_short }}-solomon
         target: solomon_build
 
     - name: Build and push Docker images for Vanuatu
-      uses: docker/build-push-action@v1.1.0
+      uses: docker/build-push-action@v2
       with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: satapps/terriamap
-        dockerfile: ./deploy/docker-alternate/alternate.Dockerfile
-        tags: ${{ steps.branch.outputs.branch_name }}-sha-${{ steps.sha.outputs.sha_short }}-vanuatu
+        file: ./deploy/docker-alternate/alternate.Dockerfile
+        tags: satapps/terriamap:${{ steps.branch.outputs.branch_name }}-sha-${{ steps.sha.outputs.sha_short }}-vanuatu
         target: vanuatu_build
