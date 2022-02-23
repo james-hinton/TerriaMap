@@ -34,7 +34,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
           
     - name: Build and push Docker images for Solomon
-      uses: docker/build-push-action@v1.1.0
+      uses: docker/build-push-action@v2
       with:
         repository: satapps/terriamap
         dockerfile: ./deploy/docker-alternate/alternate.Dockerfile
@@ -42,7 +42,7 @@ jobs:
         target: solomon_build
 
     - name: Build and push Docker images for Vanuatu
-      uses: docker/build-push-action@v1.1.0
+      uses: docker/build-push-action@v2
       with:
         repository: satapps/terriamap
         dockerfile: ./deploy/docker-alternate/alternate.Dockerfile
