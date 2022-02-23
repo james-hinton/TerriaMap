@@ -38,15 +38,13 @@ jobs:
     - name: Build and push Docker images for Solomon
       uses: docker/build-push-action@v2
       with:
-        repository: satapps/terriamap
-        dockerfile: ./deploy/docker-alternate/alternate.Dockerfile
-        tags: ${{ steps.branch.outputs.branch_name }}-sha-${{ steps.sha.outputs.sha_short }}-solomon
+        file: ./deploy/docker-alternate/alternate.Dockerfile
+        tags: satapps/terriamap:${{ steps.branch.outputs.branch_name }}-sha-${{ steps.sha.outputs.sha_short }}-solomon
         target: solomon_build
 
     - name: Build and push Docker images for Vanuatu
       uses: docker/build-push-action@v2
       with:
-        repository: satapps/terriamap
-        dockerfile: ./deploy/docker-alternate/alternate.Dockerfile
-        tags: ${{ steps.branch.outputs.branch_name }}-sha-${{ steps.sha.outputs.sha_short }}-vanuatu
+        file: ./deploy/docker-alternate/alternate.Dockerfile
+        tags: satapps/terriamap:${{ steps.branch.outputs.branch_name }}-sha-${{ steps.sha.outputs.sha_short }}-vanuatu
         target: vanuatu_build
